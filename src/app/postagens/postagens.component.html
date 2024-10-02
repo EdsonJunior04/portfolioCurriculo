@@ -1,1 +1,22 @@
-<p>postagens works!</p>
+<div class="main_postagens">
+    <h1>Postagens Recentes</h1>
+
+    <div class="postagem" *ngFor="let postagem of postagens">
+        <h2>{{ postagem.titulo }}</h2>
+        <p>{{ postagem.resumo }}</p>
+        <a href="#" class="ler_mais">Ler mais</a>
+    </div>
+
+    <div class="form_nova_postagem">
+        <h2>Adicionar Nova Postagem</h2>
+        <form (ngSubmit)="adicionarPostagem()">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" [(ngModel)]="novaPostagem.titulo" name="titulo" required placeholder="Digite o título">
+
+            <label for="resumo">Resumo</label>
+            <textarea id="resumo" [(ngModel)]="novaPostagem.resumo" name="resumo" required placeholder="Digite um resumo"></textarea>
+
+            <button type="submit">Adicionar Postagem</button>
+        </form>
+    </div>
+</div>

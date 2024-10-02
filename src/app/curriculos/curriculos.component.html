@@ -1,1 +1,27 @@
-<p>curriculos works!</p>
+<div class="main_lista_curriculos">
+    <h1>Lista de Currículos</h1>
+
+    <div class="curriculo" *ngFor="let curriculo of curriculos">
+        <h2>{{ curriculo.nome }}</h2>
+        <button (click)="abrirModal(curriculo)">Ver Detalhes</button>
+        <button (click)="downloadPDF(curriculo)">Baixar PDF</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" [ngClass]="{'is-active': isModalOpen}">
+        <div class="modal-background" (click)="fecharModal()"></div>
+        <div class="modal-content">
+            <div class="box">
+                <h2>{{ selectedCurriculo?.nome }}</h2>
+                <p><strong>E-mail:</strong> {{ selectedCurriculo?.email }}</p>
+                <p><strong>Telefone:</strong> {{ selectedCurriculo?.telefone }}</p>
+                <p><strong>Cargo:</strong> {{ selectedCurriculo?.cargo }}</p>
+                <p><strong>Objetivo:</strong> {{ selectedCurriculo?.objetivo }}</p>
+                <p><strong>Experiência:</strong> {{ selectedCurriculo?.experiencia }}</p>
+                <p><strong>Formação:</strong> {{ selectedCurriculo?.formacao }}</p>
+                <p><strong>Hardskills:</strong> {{ selectedCurriculo?.hardskills }}</p>
+                <button (click)="fecharModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

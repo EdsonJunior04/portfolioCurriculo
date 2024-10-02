@@ -1,24 +1,17 @@
 <div class="container_header">
-    <div>
-
-        <!-- Logo -->
-        <img src="/assets/image/santos.png" alt="Professional Journey">
-    </div>
-
-    <div>
+    <div class="title">
+        <!-- Titulo do site -->
         <h1>Professional Journey</h1>
     </div>
 
-    <div>
+    <div class="menu">
         <!-- Menu -->
-        <button mat-button [matMenuTriggerFor]="menu">Selecione a página</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/" routerLinkActive="active">Início</button>
-            <button mat-menu-item routerLink="/curriculos" routerLinkActive="active">Curriculos</button>
-            <button mat-menu-item routerLink="/postagens" routerLinkActive="active">Postagens</button>
-            <button mat-menu-item routerLink="/cadastro" routerLinkActive="active">Cadastro</button>
-            <button mat-menu-item routerLink="/sobreSite" routerLinkActive="active">Sobre o Site</button>
-        </mat-menu>
-        
+        <ul>
+            <li routerLink="/" routerLinkActive="active">Início</li>
+            <li routerLink="/curriculos" routerLinkActive="active">Currículos</li>
+            <li routerLink="/postagens" routerLinkActive="active">Postagens</li>
+            <li routerLink="/cadastro" routerLinkActive="active">Cadastro</li>
+            <li routerLink="/sobreSite" routerLinkActive="active">Sobre o Site</li>
+        </ul>
     </div>
 </div>

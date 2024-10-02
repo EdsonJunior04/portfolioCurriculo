@@ -1,0 +1,97 @@
+/* Estilo geral para o container de postagens */
+.main_postagens {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do título principal */
+.main_postagens h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo das postagens individuais */
+.postagem {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do título da postagem */
+.postagem h2 {
+    font-size: 1.8em;
+    margin: 0 0 10px;
+    color: #444;
+}
+
+/* Estilo do texto da postagem */
+.postagem p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Estilo do link "Ler mais" */
+.ler_mais {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.ler_mais:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para o formulário de nova postagem */
+.form_nova_postagem {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form_nova_postagem h2 {
+    margin-bottom: 15px;
+}
+
+.form_nova_postagem label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form_nova_postagem input,
+.form_nova_postagem textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form_nova_postagem button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form_nova_postagem button:hover {
+    background-color: #0056b3;
+}
+

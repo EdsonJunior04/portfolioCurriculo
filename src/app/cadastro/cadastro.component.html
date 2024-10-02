@@ -1,91 +1,82 @@
-<div class="main_cadastro">
-    <!-- Titulo -->
-    <div>
-        <h1>Cadastre seu curriculo!</h1>
-    </div>
+<div class="main_cadastro_curriculo">
+    <h1>Cadastro de Currículo</h1>
 
-    <!-- Inputs -->
-    <div>
-        <form class="container_form_cadastro" action="">
-            <div>
-                <h2>Informações básicas</h2>
-                <div class="posicao_inputs">
-                    <label for="">Nome</label>
-                    <input type="text" placeholder="Digite seu nome">
+    <form class="container_form_cadastro" (ngSubmit)="cadastrarCurriculo()">
+        <div>
+            <h2>Informações Básicas</h2>
+            <div class="posicao_inputs">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" [(ngModel)]="curriculo.nome" name="nome" required placeholder="Digite seu nome">
 
-                    <label for="">E-mail</label>
-                    <input type="text" placeholder="Digite seu e-mail">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" [(ngModel)]="curriculo.email" name="email" required placeholder="Digite seu e-mail">
 
-                    <label for="">Telefone</label>
-                    <input type="text" placeholder="Digite seu telefone">
-                </div>
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" [(ngModel)]="curriculo.telefone" name="telefone" required placeholder="Digite seu telefone">
             </div>
+        </div>
 
-            <div>
-                <h2>Objetivo Profissional</h2>
-                <div class="posicao_inputs">
-                    <label for="">Cargo</label>
-                    <input type="text" placeholder="Qual cargo você esta buscando?">
+        <div>
+            <h2>Objetivo Profissional</h2>
+            <div class="posicao_inputs">
+                <label for="cargo">Cargo</label>
+                <input type="text" id="cargo" [(ngModel)]="curriculo.cargo" name="cargo" required placeholder="Qual cargo você está buscando?">
 
-                    <label for="">Descreva seu objetivo</label>
-                    <input type="text" placeholder="Descreva brevemente seu objetivo profissional">
-
-                    <label for="">Telefone</label>
-                    <input type="text" placeholder="Digite seu telefone">
-                </div>
+                <label for="objetivo">Descreva seu objetivo</label>
+                <input type="text" id="objetivo" [(ngModel)]="curriculo.objetivo" name="objetivo" required placeholder="Descreva brevemente seu objetivo profissional">
             </div>
+        </div>
 
-            <div>
-                <h2>Experiência</h2>
-                <div class="posicao_inputs">
-                    <label for="">Você já trabalhou antes?</label>
-                    <select name="Select">
-                        <option value="true">Sim</option>
-                        <option value="false">Não</option>
-                    </select>
+        <div>
+            <h2>Experiência</h2>
+            <div class="posicao_inputs">
+                <label for="experiencia">Você já trabalhou antes?</label>
+                <select id="experiencia" [(ngModel)]="curriculo.experiencia" name="experiencia" required>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
 
-                    <label for="">Nome da empresa</label>
-                    <input type="text" placeholder="Qual o nome da empresa que você trabalhou?">
+                <label for="empresa">Nome da empresa</label>
+                <input type="text" id="empresa" [(ngModel)]="curriculo.empresa" name="empresa" placeholder="Qual o nome da empresa que você trabalhou?">
 
-                    <label for="">Cargo anterior</label>
-                    <input type="text" placeholder="Qual foi seu cargo?">
+                <label for="cargoAnterior">Cargo anterior</label>
+                <input type="text" id="cargoAnterior" [(ngModel)]="curriculo.cargoAnterior" name="cargoAnterior" placeholder="Qual foi seu cargo?">
 
-                    <label for="">Quanto tempo você trabalhou lá?</label>
-                    <input type="text" placeholder="Quanto tempo você trabalhou lá?">
-                </div>
+                <label for="tempoTrabalho">Quanto tempo você trabalhou lá?</label>
+                <input type="text" id="tempoTrabalho" [(ngModel)]="curriculo.tempoTrabalho" name="tempoTrabalho" placeholder="Quanto tempo você trabalhou lá?">
             </div>
+        </div>
 
-            <div>
-                <h2>Formação</h2>
-                <div class="posicao_inputs">
-                    <label for="">Você possui alguma formação?</label>
-                    <select name="Select">
-                        <option value="true">Sim</option>
-                        <option value="false">Não</option>
-                    </select>
+        <div>
+            <h2>Formação</h2>
+            <div class="posicao_inputs">
+                <label for="formacao">Você possui alguma formação?</label>
+                <select id="formacao" [(ngModel)]="curriculo.formacao" name="formacao" required>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
 
-                    <label for="">Qual é o seu grau?</label>
-                    <select name="Select">
-                        <option value="true">Ensino Fundamental</option>
-                        <option value="true">Ensino Médio</option>
-                        <option value="true">Graduação</option>
-                        <option value="false">Pós Graduação</option>
-                    </select>
+                <label for="grau">Qual é o seu grau?</label>
+                <select id="grau" [(ngModel)]="curriculo.grau" name="grau" required>
+                    <option value="fundamental">Ensino Fundamental</option>
+                    <option value="medio">Ensino Médio</option>
+                    <option value="graduacao">Graduação</option>
+                    <option value="pos">Pós Graduação</option>
+                </select>
 
-                    <label for="">Qual o nome da instituição?</label>
-                    <input type="text" placeholder="Qual o nome da instituição?">
-                </div>
+                <label for="instituicao">Qual o nome da instituição?</label>
+                <input type="text" id="instituicao" [(ngModel)]="curriculo.instituicao" name="instituicao" placeholder="Qual o nome da instituição?">
             </div>
+        </div>
 
-            <div>
-                <h2>Habilidades</h2>
-                <div class="posicao_inputs">
-                    <label for="">Quais suas hardskills?</label>
-                    <input type="text" placeholder="Digite suas habilidades">
-                </div>
+        <div>
+            <h2>Habilidades</h2>
+            <div class="posicao_inputs">
+                <label for="hardskills">Quais suas hardskills?</label>
+                <input type="text" id="hardskills" [(ngModel)]="curriculo.hardskills" name="hardskills" placeholder="Digite suas habilidades">
             </div>
+        </div>
 
-
-        </form>
-    </div>
+        <button type="submit">Cadastrar Currículo</button>
+    </form>
 </div>

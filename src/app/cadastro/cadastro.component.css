@@ -1,30 +1,73 @@
-.main_cadastro{
-    height: 500px;
+/* Estilo geral para o container de cadastro de currículos */
+.main_cadastro_curriculo {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container_form_cadastro{
+/* Estilo do título principal */
+.main_cadastro_curriculo h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo para o formulário */
+.container_form_cadastro {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos títulos de seção */
+.container_form_cadastro h2 {
+    font-size: 1.8em;
+    margin: 20px 0 10px;
+    color: #444;
+}
+
+/* Estilo para os inputs e labels */
+.posicao_inputs {
     display: flex;
-    /* justify-content: center; */
-    align-items: center;
     flex-direction: column;
-    /* background-color: violet; */
+    margin-bottom: 15px;
 }
 
-.posicao_inputs{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.posicao_inputs label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
 }
 
-.posicao_inputs input{
-    width: 14vw;
-    height: 3vh;
-    padding-left: 3%;
+.posicao_inputs input,
+.posicao_inputs select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
 }
 
-.posicao_inputs select{
-    width: 14vw;
-    height: 3vh;
-    padding-left: 3%;
+.posicao_inputs input:focus,
+.posicao_inputs select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilo para o botão */
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }

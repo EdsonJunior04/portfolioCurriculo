@@ -1,5 +1,70 @@
-.container_header{
+/* Estilo geral do header */
+.container_header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    color: BLACK;
+    position: relative;
+    width:  67%;
+}
+
+/* Estilo do logo */
+.logo img {
+    height: 50px; /* Ajuste a altura do logo conforme necessário */
+}
+
+/* Estilo do título */
+.title h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+/* Estilo da navegação */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os itens do menu */
+    margin: 0; /* Remove a margem padrão da lista */
+    padding: 0; /* Remove o padding padrão da lista */
+}
+
+.menu li {
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s; /* Transição suave */
+}
+
+.menu li:hover {
+    color: #ffd700; /* Cor dourada no hover */
+    transform: translateY(-2px); /* Efeito de levantar */
+}
+
+/* Estilo do item ativo */
+.menu li.active {
+    border-bottom: 2px solid #ffd700; /* Linha de destaque para a página ativa */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container_header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .title h1 {
+        font-size: 1.5em; /* Reduz a fonte em telas menores */
+    }
+
+    .menu ul {
+        flex-direction: column; /* Menu em coluna em telas menores */
+        align-items: flex-start; /* Alinhar itens à esquerda */
+    }
+
+    .menu li {
+        margin: 5px 0; /* Espaçamento entre itens */
+    }
 }
