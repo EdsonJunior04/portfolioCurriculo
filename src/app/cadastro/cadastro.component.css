@@ -1,0 +1,30 @@
+.main_cadastro{
+    height: 500px;
+}
+
+.container_form_cadastro{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    /* background-color: violet; */
+}
+
+.posicao_inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.posicao_inputs input{
+    width: 14vw;
+    height: 3vh;
+    padding-left: 3%;
+}
+
+.posicao_inputs select{
+    width: 14vw;
+    height: 3vh;
+    padding-left: 3%;
+}
