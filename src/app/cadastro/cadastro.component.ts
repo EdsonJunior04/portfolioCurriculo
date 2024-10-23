@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServerService } from '../../app/server.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,21 +13,30 @@ export class CadastroComponent {
     telefone: '',
     cargo: '',
     objetivo: '',
-    experiencia: '',
+    ja_trabalhou: '',
     empresa: '',
     cargoAnterior: '',
     tempoTrabalho: '',
     formacao: '',
     grau: '',
-    instituicao: '',
-    hardskills: ''
+    nomeInstituicao: '',
+    habilidades: ''
   };
+
+  constructor(private servico: ServerService) {}
 
   cadastrarCurriculo() {
     console.log('Currículo cadastrado:', this.curriculo);
-    // Aqui você pode adicionar lógica para enviar os dados para um servidor, se necessário
-    // Limpar os campos após o cadastro
-    this.limparFormulario();
+    
+    this.servico.postCurriculo(this.curriculo).subscribe(
+      (response: any) => {
+        alert("Currículo cadastrado com sucesso!");
+        this.limparFormulario();
+      },
+      (error: any) => {
+        alert("Erro ao cadastrar currículo: " + error);
+      }
+    );
   }
 
   limparFormulario() {
@@ -36,14 +46,14 @@ export class CadastroComponent {
       telefone: '',
       cargo: '',
       objetivo: '',
-      experiencia: '',
+      ja_trabalhou: '',
       empresa: '',
       cargoAnterior: '',
       tempoTrabalho: '',
       formacao: '',
       grau: '',
-      instituicao: '',
-      hardskills: ''
+      nomeInstituicao: '',
+      habilidades: ''
     };
   }
 }

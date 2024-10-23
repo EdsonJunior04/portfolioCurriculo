@@ -30,8 +30,8 @@
         <div>
             <h2>Experiência</h2>
             <div class="posicao_inputs">
-                <label for="experiencia">Você já trabalhou antes?</label>
-                <select id="experiencia" [(ngModel)]="curriculo.experiencia" name="experiencia" required>
+                <label for="ja_trabalhou">Você já trabalhou antes?</label>
+                <select id="ja_trabalhou" [(ngModel)]="curriculo.ja_trabalhou" name="ja_trabalhou" required>
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
                 </select>
@@ -64,16 +64,16 @@
                     <option value="pos">Pós Graduação</option>
                 </select>
 
-                <label for="instituicao">Qual o nome da instituição?</label>
-                <input type="text" id="instituicao" [(ngModel)]="curriculo.instituicao" name="instituicao" placeholder="Qual o nome da instituição?">
+                <label for="nomeInstituicao">Qual o nome da instituição?</label>
+                <input type="text" id="nomeInstituicao" [(ngModel)]="curriculo.nomeInstituicao" name="nomeInstituicao" placeholder="Qual o nome da instituição?">
             </div>
         </div>
 
         <div>
             <h2>Habilidades</h2>
             <div class="posicao_inputs">
-                <label for="hardskills">Quais suas hardskills?</label>
-                <input type="text" id="hardskills" [(ngModel)]="curriculo.hardskills" name="hardskills" placeholder="Digite suas habilidades">
+                <label for="habilidades">Quais suas habilidades?</label>
+                <input type="text" id="habilidades" [(ngModel)]="curriculo.habilidades" name="habilidades" placeholder="Digite suas habilidades">
             </div>
         </div>
 
