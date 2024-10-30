@@ -12,20 +12,23 @@ export class CadastroComponent {
     email: '',
     telefone: '',
     cargo: '',
-    objetivo: '',
-    ja_trabalhou: '',
-    empresa: '',
+    nomeEmpresa: '',
     cargoAnterior: '',
-    tempoTrabalho: '',
-    formacao: '',
-    grau: '',
-    nomeInstituicao: '',
+    tempoTrabalhado: '',
     habilidades: ''
   };
 
   constructor(private servico: ServerService) {}
 
   cadastrarCurriculo() {
+    // Verifica se todos os campos estão preenchidos
+    const allFieldsFilled = Object.values(this.curriculo).every(field => field.trim() !== '');
+
+    if (!allFieldsFilled) {
+      alert("Por favor, preencha todos os campos!");
+      return;
+    }
+
     console.log('Currículo cadastrado:', this.curriculo);
     
     this.servico.postCurriculo(this.curriculo).subscribe(
@@ -45,14 +48,9 @@ export class CadastroComponent {
       email: '',
       telefone: '',
       cargo: '',
-      objetivo: '',
-      ja_trabalhou: '',
-      empresa: '',
+      nomeEmpresa: '',
       cargoAnterior: '',
-      tempoTrabalho: '',
-      formacao: '',
-      grau: '',
-      nomeInstituicao: '',
+      tempoTrabalhado: '',
       habilidades: ''
     };
   }
