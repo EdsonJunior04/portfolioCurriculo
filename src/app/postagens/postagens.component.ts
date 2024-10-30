@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServerService } from '../server.service'; // ajuste o caminho conforme necessário
 
 @Component({
   selector: 'app-postagens',
@@ -6,22 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./postagens.component.css']
 })
 export class PostagensComponent {
-  postagens = [
-    { titulo: 'Título da Postagem 1', resumo: 'Resumo da postagem 1.' },
-    { titulo: 'Título da Postagem 2', resumo: 'Resumo da postagem 2.' },
-    { titulo: 'Título da Postagem 3', resumo: 'Resumo da postagem 3.' }
-  ];
-
+  postagens: any[] = [];
   novaPostagem = {
     titulo: '',
-    resumo: ''
+    descricao: ''
   };
 
+  constructor(private serverService: ServerService) {
+    this.listarPostagens();
+  }
+
+  listarPostagens() {
+    this.serverService.listarPostagens().subscribe(data => {
+      this.postagens = data;
+    });
+  }
+
   adicionarPostagem() {
-    if (this.novaPostagem.titulo && this.novaPostagem.resumo) {
-      this.postagens.push({ ...this.novaPostagem });
-      this.novaPostagem.titulo = '';
-      this.novaPostagem.resumo = '';
+    if (this.novaPostagem.titulo && this.novaPostagem.descricao) {
+      this.serverService.postPostagem(this.novaPostagem).subscribe(response => {
+        console.log(response);
+        this.listarPostagens();  // Atualiza a lista após a adição
+        this.novaPostagem.titulo = '';
+        this.novaPostagem.descricao = '';
+      });
     }
   }
 }

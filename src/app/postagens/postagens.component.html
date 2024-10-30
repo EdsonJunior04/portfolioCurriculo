@@ -2,9 +2,11 @@
     <h1>Postagens Recentes</h1>
 
     <div class="postagem" *ngFor="let postagem of postagens">
-        <h2>{{ postagem.titulo }}</h2>
-        <p>{{ postagem.resumo }}</p>
-        <a href="#" class="ler_mais">Ler mais</a>
+        <div class="postagem-card">
+            <h2>{{ postagem.titulo }}</h2>
+            <p>{{ postagem.descricao }}</p>
+            <p class="data-postagem">{{ postagem.data_publicacao | date:'short' }}</p>
+        </div>
     </div>
 
     <div class="form_nova_postagem">
@@ -13,8 +15,8 @@
             <label for="titulo">Título</label>
             <input type="text" id="titulo" [(ngModel)]="novaPostagem.titulo" name="titulo" required placeholder="Digite o título">
 
-            <label for="resumo">Resumo</label>
-            <textarea id="resumo" [(ngModel)]="novaPostagem.resumo" name="resumo" required placeholder="Digite um resumo"></textarea>
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" [(ngModel)]="novaPostagem.descricao" name="descricao" required placeholder="Digite a descrição"></textarea>
 
             <button type="submit">Adicionar Postagem</button>
         </form>

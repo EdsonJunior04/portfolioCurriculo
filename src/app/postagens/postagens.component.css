@@ -39,18 +39,11 @@
     margin-bottom: 10px;
 }
 
-/* Estilo do link "Ler mais" */
-.ler_mais {
-    display: inline-block;
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.ler_mais:hover {
-    background-color: #0056b3;
+/* Estilo da data da postagem */
+.data-postagem {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 5px; /* Espaço acima da data para separar do texto */
 }
 
 /* Estilo para o formulário de nova postagem */
@@ -94,4 +87,3 @@
 .form_nova_postagem button:hover {
     background-color: #0056b3;
 }
-

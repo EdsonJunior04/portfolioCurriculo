@@ -38,4 +38,21 @@ export class ServerService {
     const url = 'http://localhost:8080/listarCurriculos'; // Endpoint para listar currículos
     return this.http.get<any>(url);
   }
+
+
+   // Novo método para listar postagens
+   public listarPostagens(): Observable<any> {
+    const url = 'http://localhost:8080/listarPostagens'; // Ajuste para o endpoint correto
+    return this.http.get<any>(url);
+  }
+
+  // Novo método para cadastrar postagens
+  public postPostagem(postagem: any): Observable<any> {
+    const url = 'http://localhost:8080/cadastrarPostagem'; // Ajuste para o endpoint correto
+    const options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      responseType: 'text' as 'json'
+    };
+    return this.http.post<any>(url, postagem, options);
+  }
 }
