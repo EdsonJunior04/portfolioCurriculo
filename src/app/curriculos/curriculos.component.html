@@ -1,10 +1,18 @@
 <div class="main_lista_curriculos">
     <h1>Lista de Currículos</h1>
 
+    <div *ngIf="curriculos.length === 0" class="no-curriculos">
+        <p>Nenhum currículo cadastrado.</p>
+    </div>
+
     <div class="curriculo" *ngFor="let curriculo of curriculos">
-        <h2>{{ curriculo.nome }}</h2>
-        <button (click)="abrirModal(curriculo)">Ver Detalhes</button>
-        <button (click)="downloadPDF(curriculo)">Baixar PDF</button>
+        <div class="curriculo-header">
+            <h2>{{ curriculo.nome }}</h2>
+            <div class="button-group">
+                <button class="btn btn-primary" (click)="abrirModal(curriculo)">Ver Detalhes</button>
+                <button class="btn btn-secondary" (click)="downloadPDF(curriculo)">Baixar PDF</button>
+            </div>
+        </div>
     </div>
 
     <!-- Modal -->
@@ -16,11 +24,11 @@
                 <p><strong>E-mail:</strong> {{ selectedCurriculo?.email }}</p>
                 <p><strong>Telefone:</strong> {{ selectedCurriculo?.telefone }}</p>
                 <p><strong>Cargo:</strong> {{ selectedCurriculo?.cargo }}</p>
-                <p><strong>Objetivo:</strong> {{ selectedCurriculo?.objetivo }}</p>
-                <p><strong>Experiência:</strong> {{ selectedCurriculo?.experiencia }}</p>
-                <p><strong>Formação:</strong> {{ selectedCurriculo?.formacao }}</p>
-                <p><strong>Hardskills:</strong> {{ selectedCurriculo?.hardskills }}</p>
-                <button (click)="fecharModal()">Fechar</button>
+                <p><strong>Nome da Empresa:</strong> {{ selectedCurriculo?.nomeEmpresa }}</p>
+                <p><strong>Cargo Anterior:</strong> {{ selectedCurriculo?.cargoAnterior }}</p>
+                <p><strong>Tempo Trabalhado:</strong> {{ selectedCurriculo?.tempoTrabalhado }}</p>
+                <p><strong>Habilidades:</strong> {{ selectedCurriculo?.habilidades }}</p>
+                <button class="btn btn-primary" (click)="fecharModal()">Fechar</button>
             </div>
         </div>
     </div>

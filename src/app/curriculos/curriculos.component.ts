@@ -1,28 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ServerService } from '../server.service'; // Importa o serviço que criamos
 import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-curriculos',
   templateUrl: './curriculos.component.html',
-  styleUrl: './curriculos.component.css'
+  styleUrls: ['./curriculos.component.css']
 })
-export class CurriculosComponent {
-  curriculos = [
-    {
-      nome: 'Edson',
-      email: 'edson@gmail.com',
-      telefone: '(11) 91234-5678',
-      cargo: 'DevOps',
-      objetivo: 'Contribuir para projetos desafiadores.',
-      experiencia: 'Sim',
-      formacao: 'Graduação em Ciência da Computação',
-      hardskills: 'JavaScript, Angular, CSS'
-    },
-    // Adicione mais currículos aqui
-  ];
-
+export class CurriculosComponent implements OnInit {
+  curriculos: any[] = [];
   isModalOpen = false;
   selectedCurriculo: any;
+
+  constructor(private serverService: ServerService) {} // Injetando o serviço
+
+  ngOnInit() {
+    this.listarCurriculos();
+  }
+
+  listarCurriculos() {
+    this.serverService.listarCurriculos().subscribe(
+      data => {
+        this.curriculos = data;
+      },
+      error => {
+        console.error('Erro ao buscar currículos:', error);
+      }
+    );
+  }
 
   abrirModal(curriculo: any) {
     this.selectedCurriculo = curriculo;
