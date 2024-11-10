@@ -1,11 +1,11 @@
 <div class="main_lista_curriculos">
-  <h1>Lista de Currículos</h1>
+  <h1>Meus Currículos Favoritos</h1>
 
-  <div *ngIf="curriculos.length === 0" class="no-curriculos">
-    <p>Nenhum currículo cadastrado.</p>
+  <div *ngIf="favoritos.length === 0" class="no-curriculos">
+    <p>Nenhum currículo favoritado.</p>
   </div>
 
-  <div class="curriculo" *ngFor="let curriculo of curriculos">
+  <div class="curriculo" *ngFor="let curriculo of favoritos">
     <div class="curriculo-header">
       <h2>{{ curriculo.nome }}</h2>
       <div class="button-group">
@@ -16,7 +16,7 @@
         <button 
           class="btn" 
           (click)="toggleFavorite(curriculo)" 
-          [ngClass]="isFavorite(curriculo) ? 'btn-favorito' : 'btn-not-favorito'">
+          [ngClass]="isFavorite(curriculo) ? 'btn-favorito' : 'btn-favorito'">
           
           <!-- Ícone de Favorito com Texto -->
           <i class="fas" [ngClass]="isFavorite(curriculo) ? 'fa-heart' : 'fa-heart-broken'"></i>
@@ -25,6 +25,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Botão para excluir todos os favoritos -->
+  <button class="btn btn-danger" (click)="excluirFavoritos()">Excluir Todos os Favoritos</button>
 
   <!-- Modal -->
   <div class="modal" [ngClass]="{'is-active': isModalOpen}">
@@ -41,6 +44,8 @@
         <p><strong>Cargo Anterior:</strong> {{ selectedCurriculo?.cargoAnterior }}</p>
         <p><strong>Tempo Trabalhado:</strong> {{ selectedCurriculo?.tempoTrabalhado }}</p>
         <p><strong>Habilidades:</strong> {{ selectedCurriculo?.habilidades }}</p>
+
+      
 
         <button class="btn btn-primary" (click)="fecharModal()">Fechar</button>
       </div>

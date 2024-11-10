@@ -3,16 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CurriculosComponent } from './curriculos/curriculos.component';
 import { PostagensComponent } from './postagens/postagens.component';
-import { SobreSiteComponent } from './sobre-site/sobre-site.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 
 
 
 const routes: Routes = [
-  {path: 'curriculos', component:CurriculosComponent},
-  {path: 'postagens', component:PostagensComponent},
-  {path: 'cadastro', component:CadastroComponent},
-  {path: 'sobreSite', component:SobreSiteComponent},
+  { path: 'curriculos', component: CurriculosComponent },
+  { path: 'postagens', component: PostagensComponent },
+  { path: 'cadastro', component: CadastroComponent },
+  { path: 'favoritos', component: FavoritesPageComponent },
 ];
 
 

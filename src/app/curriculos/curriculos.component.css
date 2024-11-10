@@ -102,3 +102,45 @@
     margin-top: 20px;
     width: 100%;
 }
+
+/* Estilo do botão de Favoritar */
+.btn-favorito {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.btn-favorito i {
+    margin-right: 8px; /* Espaçamento entre ícone e texto */
+}
+
+.btn-not-favorito {
+    background-color: #ccc;
+    color: black;
+}
+
+.btn-not-favorito i {
+    margin-right: 8px; /* Espaçamento entre ícone e texto */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.button-group button span {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Estilo para o ícone de coração */
+.fas {
+    font-size: 18px;
+}
+
+/* Alterações de cor para o ícone no estado favoritado */
+.btn-favorito i {
+    color: #ff3333;
+}
+
+.btn-not-favorito i {
+    color: #666;
+}
