@@ -14,6 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
+import { MeuCurriculosComponent } from './meu-curriculos/meu-curriculos.component';
+import { MyCurriculoComponent } from './my-curriculo/my-curriculo.component';
 
 
 
@@ -25,6 +27,8 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
     CadastroComponent,
     HeaderComponent,
     FavoritesPageComponent,
+    MeuCurriculosComponent,
+    MyCurriculoComponent,
     
   ],
   imports: [
